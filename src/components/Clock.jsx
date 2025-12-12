@@ -1,10 +1,14 @@
 import React from 'react';
+import Button from './Button';
 
 class Clock extends React.Component {
+
     //constructor(props){
     //  super(props);
-      state = {date : new Date()};
+    //  this.state = {date : new Date()};
    // }
+
+    state = {date : new Date()};
 
     componentDidMount(){
       this.clockTimer = setInterval(() => this.tick(),1000);
@@ -16,21 +20,34 @@ class Clock extends React.Component {
     tick() {
        this.setState({
             date: new Date(),
-        });
+       });
     }
 
-  render() {
-    return (
-      <h1 className="heading">
-        <span className="text">
-          Current time {this.state.date.toLocaleTimeString(this.props.locale)}
-        </span>
-        <img src="" alt="" />
-      </h1>
-    );
-  }
+    handleClick = (locale) => {
+      console.log('the button was clicked');
+      this.setState({
+          locale: locale,
+      });
+    }
+
+    render() {
+      console.log("Clock component rendered");
+      const {date,locale} = this.state;
+      return (
+        <div>
+          <h1 className="heading">
+            <span className="text">
+              Current time {this.state.date.toLocaleTimeString(locale)}
+            </span>        
+          </h1>
+          {/* <button type="button" onClick={this.handleClick.bind(this,'en-US')}>Click Here</button> */}
+           {/* <button type="button" onClick={() => this.handleClick('en-US')}>Click Here</button> */}
+
+           <Button change={this.handleClick} locale="en-US">Click Here</Button>
+        </div>
+
+      );
+    }
 }
-
-
 
 export default Clock;
