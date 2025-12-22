@@ -12,26 +12,29 @@ export default class Form extends React.Component {
     handleChange = (e) => {
         console.log(e.target.value);
         console.log(e.target.type);
-        if(e.target.type === 'text'){
-            this.setState({
-                title: e.target.value             
-            });
+        this.setState({
+            [e.target.name]:e.target.value,
+        });
+        // if(e.target.type === 'text'){
+        //     this.setState({
+        //         title: e.target.value             
+        //     });
 
-        }else if(e.target.type === 'textarea'){
-            this.setState({
-                text: e.target.value
-            });
-        }else if(e.target.type === 'select-one'){
-            this.setState({
-                library: e.target.value
-            });
-        }else if(e.target.type === 'checkbox'){
-            this.setState({
-                isCheck: e.target.checked
-            });
-        }else{
-            console.log("Nothing here");
-        }
+        // }else if(e.target.type === 'textarea'){
+        //     this.setState({
+        //         text: e.target.value
+        //     });
+        // }else if(e.target.type === 'select-one'){
+        //     this.setState({
+        //         library: e.target.value
+        //     });
+        // }else if(e.target.type === 'checkbox'){
+        //     this.setState({
+        //         isCheck: e.target.checked
+        //     });
+        // }else{
+        //     console.log("Nothing here");
+        // }
         
     }
 
@@ -46,7 +49,7 @@ export default class Form extends React.Component {
         return(        
             <div>
                 <form onSubmit={this.submitHandler}>
-                    <input type="text"  placeholder="Enter Value" value ={title} onChange={this.handleChange} />
+                    <input type="text" name="title" placeholder="Enter Value" value ={title} onChange={this.handleChange} />
                     <p>{title}</p>
                     <br/>
                     <br/>
