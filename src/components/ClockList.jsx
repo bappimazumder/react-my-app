@@ -20,4 +20,4 @@ export default function ClockList({quantities = [] }){
 
 }
 
-Next 10 
+// Next 10 
