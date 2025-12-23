@@ -1,30 +1,29 @@
 import React from 'react';
 import BoilingVerdict from './BoilingVerdict';
+import TemparatureInput from './TemparatureInput';
+import { convert, toCelsius , toFarhenheit } from '../lib/converter';
 
 export default class Calculator extends React.Component {
+   state = {temperature:'',scale:'c'};
 
-    state = {
-        temperature: 'kk',
-    };
-
-    onTemperatureChange = (e) =>{
-        console.log(e.target.value);
+   handleChange = (e,scale) => {
         this.setState({
-            temperature: e.target.value
+            temperature: e.target.value,
+            scale,
         });
-    }
+   }
 
     render() {
-        const { temperature } = this.state;
+        const {temperature,scale} = this.state;
+        const celsius = scale === 'f' ? convert(temperature,toCeltoCelsius) : temperature;
+        const ferhenheit = scale === 'c' ? convert(temperature,toFarhenheit) : temperature;
 
         return(
             <div>
-                <fieldset>
-                    <legend>Enter temparature in Celsius:</legend>
-                    <input type="text" name="temparature" value={temperature} onChange={this.onTemperatureChange} />
-                </fieldset>
+               <TemparatureInput scale="c" temperature={celsius} onTemperatureChange={this.handleChange} />
+               <TemparatureInput scale="f" temperature={ferhenheit} onTemperatureChange={this.handleChange} />
                 
-                <BoilingVerdict celsius={parseFloat(temperature)} />
+               <BoilingVerdict celsius={parseFloat(temperature)} />
             </div>
         );
     }
