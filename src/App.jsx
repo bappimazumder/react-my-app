@@ -10,16 +10,28 @@
 // import Emoji from "./components/composition/Emoji";
 // import Bracket from "./components/composition/Bracket" 
 
-import ClickCounter from './components/ClickCounter'
-import HoverCounter from './components/HoverCounter'
+import ClickCounter from './components/ClickCounter';
+import HoverCounter from './components/HoverCounter';
+import Counter from './components/Counter';
 
 function App() {
   console.log("App component rendered");
-  return <div className="app">
-    <ClickCounter />
-    <HoverCounter />
+  return(
+     <div className="app">
+      {/* <ClickCounter />
+      <HoverCounter /> */}
+      {/* <User render={(isLoggedIn) => isLoggedIn ? 'Bappi' : 'Guest'}/> */}
+      <Counter 
+      renderMethod={(count,incrementCount) => <ClickCounter count={count} incrementCount={incrementCount} />
+      }
+      />
+
+      <Counter renderMethod={(count,incrementCount) => <HoverCounter count={count} incrementCount={incrementCount} />
+      }
+      />
+
     </div>
- 
+  );
   // return (
   //   <Emoji>
   //       {/* {({addEmoji}) => <Text  addEmoji={addEmoji} />}      */}
