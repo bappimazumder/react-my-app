@@ -1,74 +1,37 @@
-//import { useState,useEffect } from 'react'
-//import './App.css'
-// import Clock from './components/Clock'
-// import ClockList from './components/ClockList';
-// import Form from './components/Form';
-// import Calculator from './components/Calculator';
-//import Text from "./components/inheritance/Text";
-//import Emoji from "./components/inheritance/Emoji";
-// import Text from "./components/composition/Text"
-// import Emoji from "./components/composition/Emoji";
-// import Bracket from "./components/composition/Bracket" 
-
-import ClickCounter from './components/ClickCounter';
-import HoverCounter from './components/HoverCounter';
+import React from 'react';
 import Counter from './components/Counter';
+import ClickCounter from './components/ClickCounter';
+import Section from './components/Section';
+import ThemeContext from './contexts/themeContext';
 
-function App() {
-  console.log("App component rendered");
-  return(
-     <div className="app">
-      {/* <ClickCounter />
-      <HoverCounter /> */}
-      {/* <User render={(isLoggedIn) => isLoggedIn ? 'Bappi' : 'Guest'}/> */}
-      <Counter>
-         {(count,incrementCount) => ( 
-          <ClickCounter count={count} incrementCount={incrementCount}></ClickCounter>
-         )}
-      </Counter>
+export default class App extends React.Component{
+
+  // console.log("App component rendered");
+  state = {
+    theme: 'dark',
+  }
+
+  render() {
+    const {theme} = this.state;
+
+    return(
+      <div className="app">
       
-     
+        <Counter>
+          {(count,incrementCount) => ( 
+            <ClickCounter count={count} incrementCount={incrementCount}></ClickCounter>
+          )}
+        </Counter>  
 
-      <Counter>
-        {(count,incrementCount) => (
-          <HoverCounter count={count} incrementCount={incrementCount} />
-        )}
-        </Counter> 
-      
+        <ThemeContext.Provider value={{theme: theme}}>
+          <Section/>  
+        </ThemeContext.Provider>
+        
 
-    </div>
-  );
-  // return (
-  //   <Emoji>
-  //       {/* {({addEmoji}) => <Text  addEmoji={addEmoji} />}      */}
-  //       {({addEmoji}) => (
-  //         <Bracket>
-  //           {({ addBracket }) => <Text addEmoji={addEmoji} addBracket={addBracket} />}
-  //         </Bracket>
-  //       )}
-  //   </Emoji>
-    
-  // );
- 
- // return <Emoji><Text /></Emoji>; 
+      </div>
+    );
 
-  
+  }  
 
-  // return <Clock />;
-  //const quantities = [1,2,3];
-  // return (
-  //     <div>
-  //       {/* <ClockList quantities={quantities} /> */}
-  //       {/* <Form /> */}
-      
-  //     </div>
-  // );
-
-    // return (
-    //   <div>
-    //     <Calculator />
-    //   </div>
-    //   );
 }
 
-export default App;

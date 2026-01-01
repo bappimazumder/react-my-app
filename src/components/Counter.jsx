@@ -13,6 +13,7 @@ class Counter extends React.Component{
     render(){
         const {children} = this.props;
         const {count} = this.state;
+        const {head,headList,hilist,} = this.state;
         return children(count, this.incrementCount);
     }
 
