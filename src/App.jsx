@@ -8,7 +8,7 @@ export default class App extends React.Component{
 
   // console.log("App component rendered");
   state = {
-    theme: 'dark',
+    theme: 'light',
   }
 
   render() {
