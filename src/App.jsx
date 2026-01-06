@@ -8,7 +8,23 @@ export default class App extends React.Component{
 
   // console.log("App component rendered");
   state = {
-    theme: 'light',
+    theme: 'dark',
+  }
+
+  switchTheme = () => {
+      this.setState(({theme}) => {
+        if(theme === 'dark'){
+          return{
+            theme: 'light',
+          }
+
+        }else {
+            return {
+              theme: 'dark',
+            }
+        }
+      }
+   )
   }
 
   render() {
@@ -23,10 +39,9 @@ export default class App extends React.Component{
           )}
         </Counter>  
 
-        <ThemeContext.Provider value={{theme: theme}}>
+        <ThemeContext.Provider value={{theme: theme, switchTheme:this.switchTheme}} >
           <Section/>  
-        </ThemeContext.Provider>
-        
+        </ThemeContext.Provider>        
 
       </div>
     );
