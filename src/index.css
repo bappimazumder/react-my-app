@@ -36,6 +36,12 @@ h1 {
   color: #535bf2;
 }
 
+p {
+  font-size: 1.2em;
+  line-height: 0.5;
+  color: #eb2953;
+}
+
 button {
   border-radius: 8px;
   border: 1px solid transparent;
