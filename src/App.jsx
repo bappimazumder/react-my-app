@@ -4,12 +4,13 @@ import { useState,useCallback,useMemo } from "react";
 // import Button from './components/ButtonFunc';
 // import Title from './components/Title';
 //import Form from "./components/FormFunc";
-import Time from "./components/Time";
+// import Time from "./components/Time";
+import Counter from "./components/Counterfunc";
 export default function App(){
 
   return(
     <div className="app">     
-      <Time />     
+      <Counter />     
     </div>
   );  
 
