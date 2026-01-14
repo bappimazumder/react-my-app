@@ -6,13 +6,14 @@ import { useState,useCallback,useMemo } from "react";
 //import Form from "./components/FormFunc";
 // import Time from "./components/Time";
 // import Counter from "./components/Counterfunc";
-import ComplexCounter from "./components/ComplexCounter";
+//import ComplexCounter from "./components/ComplexCounter";
+import CounterThree from "./components/CounterThree";
 
 export default function App(){
 
   return(
     <div className="app">     
-      <ComplexCounter />     
+      <CounterThree />     
     </div>
   );  
 
