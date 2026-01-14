@@ -1,4 +1,4 @@
-import { useState,useCallback,useMemo } from "react";
+//import { useState,useCallback,useMemo } from "react";
 // import MyComponent from './components/MyComponent';
 // import ShowCount from './components/ShowCount';
 // import Button from './components/ButtonFunc';
@@ -7,13 +7,15 @@ import { useState,useCallback,useMemo } from "react";
 // import Time from "./components/Time";
 // import Counter from "./components/Counterfunc";
 //import ComplexCounter from "./components/ComplexCounter";
-import CounterThree from "./components/CounterThree";
+// import CounterThree from "./components/CounterThree";
+// import GetPost from "./components/GetPost";
+import GetPost2 from "./components/GetPost2";
 
 export default function App(){
 
   return(
     <div className="app">     
-      <CounterThree />     
+      <GetPost2 />     
     </div>
   );  
 
