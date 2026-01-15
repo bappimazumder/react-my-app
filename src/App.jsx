@@ -9,13 +9,15 @@
 //import ComplexCounter from "./components/ComplexCounter";
 // import CounterThree from "./components/CounterThree";
 // import GetPost from "./components/GetPost";
-import GetPost2 from "./components/GetPost2";
+// import GetPost2 from "./components/GetPost2";
+
+import LayoutComponent2 from "./components/LayoutComponent2";
 
 export default function App(){
 
   return(
     <div className="app">     
-      <GetPost2 />     
+      <div><LayoutComponent2 /></div>
     </div>
   );  
 
