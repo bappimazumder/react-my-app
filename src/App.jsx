@@ -11,13 +11,16 @@
 // import GetPost from "./components/GetPost";
 // import GetPost2 from "./components/GetPost2";
 
-import LayoutComponent2 from "./components/LayoutComponent2";
+// import LayoutComponent2 from "./components/LayoutComponent2";
+import './assets/css/global.css';
+import Logo from './components/Logo';
 
 export default function App(){
 
   return(
     <div className="app">     
-      <div><LayoutComponent2 /></div>
+      <h1>Learn with Sumit</h1>
+      <Logo />
     </div>
   );  
 
